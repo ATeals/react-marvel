@@ -10,7 +10,8 @@ const SearchInput = ({ setSearch }: { setSearch: Dispatch<SetStateAction<string>
 
     const handleBlur = () => {
         setTyping("");
-        setSearch("");
+
+        setTimeout(() => setSearch(""), 100);
     };
 
     return (
