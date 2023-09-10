@@ -1,5 +1,6 @@
-import useTyping from "@/hooks/useTyping";
 import { Dispatch, SetStateAction } from "react";
+
+import useTyping from "@/hooks/useTyping";
 
 const SearchInput = ({ setSearch }: { setSearch: Dispatch<SetStateAction<string>> }) => {
     const [typing, setTyping] = useTyping("", () => setSearch(typing));

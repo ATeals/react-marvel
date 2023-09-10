@@ -8,15 +8,15 @@ const Skeleton = () => {
                         key={i}
                         style={style.box}
                     >
-                        <div style={{ width: "100%", height: "400px", borderBottom: "4px solid red" }}></div>
-                        <div style={{ fontSize: "24px", fontWeight: 600, height: "100%", padding: "5px" }}></div>
+                        <div style={style.imgBox}></div>
+                        <div style={style.name}></div>
                     </div>
                 ))}
         </section>
     );
 };
 
-const style = {
+const style: { [key: string]: React.CSSProperties } = {
     container: {
         display: "grid",
         gridTemplateColumns: "repeat(3, 1fr)",
@@ -33,6 +33,8 @@ const style = {
         overflow: "hidden",
         height: "100%",
     },
-} as any;
+    imgBox: { width: "100%", height: "400px", borderBottom: "4px solid red" },
+    name: { fontSize: "24px", fontWeight: 600, height: "100%", padding: "5px" },
+};
 
 export default Skeleton;

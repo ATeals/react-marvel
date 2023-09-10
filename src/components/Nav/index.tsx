@@ -4,18 +4,7 @@ import SearchBar from "./SearchBar";
 
 const Nav = () => {
     return (
-        <nav
-            style={{
-                ...style.nav,
-                position: "sticky",
-                top: "0px",
-                zIndex: 999,
-                backgroundColor: "var(--color-bg)",
-                borderBottom: "5px solid red",
-                transition: "background 250ms ease-in-out, transform 150ms ease",
-                display: "flex",
-            }}
-        >
+        <nav style={style}>
             <ScrollTop />
             <DarkModeBtn />
             <SearchBar />
@@ -23,6 +12,15 @@ const Nav = () => {
     );
 };
 
-const style = { nav: { padding: "10px" } };
+const style: React.CSSProperties = {
+    padding: "10px",
+    position: "sticky",
+    top: "0px",
+    zIndex: 999,
+    backgroundColor: "var(--color-bg)",
+    borderBottom: "5px solid red",
+    transition: "background 250ms ease-in-out, transform 150ms ease",
+    display: "flex",
+};
 
 export default Nav;
