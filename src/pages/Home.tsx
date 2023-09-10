@@ -1,5 +1,11 @@
+import { InfiniteCharacterList } from "@/components/CharacterList";
+
 const Home = () => {
-    return <h1>Home</h1>;
+    return (
+        <main>
+            <InfiniteCharacterList offset={0} />
+        </main>
+    );
 };
 
 export default Home;
