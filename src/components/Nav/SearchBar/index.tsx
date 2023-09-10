@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import SearchInput from "./SearchInput";
 import SearchResult from "./SearchResult";
 
@@ -6,7 +7,7 @@ const SearchBar = () => {
     const [keyword, setKeyword] = useState("");
 
     return (
-        <section style={{ width: "70%", color: "var(--color-text)" }}>
+        <section style={style}>
             <SearchInput setSearch={setKeyword} />
             {keyword !== "" && (
                 <SearchResult
@@ -17,5 +18,7 @@ const SearchBar = () => {
         </section>
     );
 };
+
+const style = { width: "70%", color: "var(--color-text)" };
 
 export default SearchBar;

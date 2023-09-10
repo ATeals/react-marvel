@@ -1,4 +1,5 @@
 import { Character } from "@/util/type/Character";
+
 import CharacterBox from "./CharacterBox";
 
 const CharacterList = ({ characters }: { characters: Character[] }) => {
@@ -22,6 +23,6 @@ const style = {
         margin: "0 auto",
         padding: "10px 0",
     },
-} as any;
+};
 
 export default CharacterList;

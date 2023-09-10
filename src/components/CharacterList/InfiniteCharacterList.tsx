@@ -1,7 +1,8 @@
+import { useState } from "react";
+
 import useQuery from "@/hooks/useQuery";
 import { getCharacterList } from "@/util/api";
 import { CharacterList, Skeleton as SkCharacter } from "@/components/CharacterList";
-import { useState } from "react";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 const InfiniteCharacterList = ({ offset }: { offset: number }) => {

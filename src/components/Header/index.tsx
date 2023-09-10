@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <header style={style.container as any}>
+        <header style={style.container}>
             <Link to={"/"}>
                 <img
                     src="/images/logo.png"
@@ -17,6 +17,6 @@ const Header = () => {
 
 export default Header;
 
-const style = {
+const style: { [key: string]: React.CSSProperties } = {
     container: { display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "10px" },
 };

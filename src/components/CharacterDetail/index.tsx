@@ -1,16 +1,17 @@
 import { Character } from "@/util/type/Character";
+
 import ItemList from "./ItemList";
 
 const CharacterDetail = ({ character }: { character: Character }) => {
     return (
         <div style={{ ...style.container, backgroundImage: `url(${character.thumbnail.path}.${character.thumbnail.extension})` }}>
-            <div style={{ background: "var(--color-bg)", width: "100%", borderTop: "5px solid red", transition: "background 250ms ease-in-out, transform 150ms ease" }}>
+            <div style={style.box}>
                 <h1 style={{ ...style.title, textAlign: "center", padding: "10px", marginBottom: "50px" }}>{character.name}</h1>
 
                 {character.description && (
                     <div>
                         <h1 style={style.title}>Discription</h1>
-                        <p style={{ margin: "10px", padding: "10px" }}>{character.description}</p>
+                        <p style={style.description}>{character.description}</p>
                     </div>
                 )}
 
@@ -52,7 +53,7 @@ const CharacterDetail = ({ character }: { character: Character }) => {
     );
 };
 
-const style = {
+const style: { [key: string]: React.CSSProperties } = {
     container: {
         color: "var(--color-text)",
         display: "flex",
@@ -67,7 +68,9 @@ const style = {
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
     },
+    box: { background: "var(--color-bg)", width: "100%", borderTop: "5px solid red", transition: "background 250ms ease-in-out, transform 150ms ease" },
     title: { fontSize: "32px", fontWeight: "600" },
-} as any;
+    description: { margin: "10px", padding: "10px" },
+};
 
 export default CharacterDetail;

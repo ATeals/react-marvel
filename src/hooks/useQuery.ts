@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+
 import useSessionStorage from "./useSessionStorage";
 
 const useQuery = (key: string, fetchFn: () => Promise<Response>) => {
@@ -16,19 +17,16 @@ const useQuery = (key: string, fetchFn: () => Promise<Response>) => {
         try {
             setCache(JSON.stringify({ ...Map, [key]: data }));
         } catch (err) {
-            console.log("양 다참!");
+            console.log("Not enough storage.");
         }
-
         return setLoading(false);
     }, [key]);
 
     useEffect(() => {
-        if (loading) {
-            if (Map[key]) {
-                setData(Map[key]);
-                return setLoading(false);
-            }
-
+        if (Map[key]) {
+            setData(Map[key]);
+            setLoading(false);
+        } else {
             fetching();
         }
 
